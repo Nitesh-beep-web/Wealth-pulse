@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WealthPulse — Your guide to making money online using insurance strategies, fitness, and AI tools. Real tips, real results for American earners." />
+  <meta name="keywords" content="make money online, insurance tips, fitness, AI tools, passive income, USA" />
+  <title>WealthPulse — Earn Smarter. Live Better.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg:        #f7f5f0;
+      --bg2:       #eeeae2;
+      --surface:   #ffffff;
+      --border:    #ddd8cc;
+      --text:      #1a1814;
+      --muted:     #6b6559;
+      --accent:    #c8622a;
+      --accent2:   #2a6bc8;
+      --accent3:   #2aa87e;
+      --hero-bg:   #1a1814;
+      --hero-text: #f7f5f0;
+      --card-shadow: 0 2px 16px rgba(0,0,0,.07);
+      --card-shadow-hover: 0 8px 40px rgba(0,0,0,.13);
+      --radius:    14px;
+      --transition: .25s cubic-bezier(.4,0,.2,1);
+    }
+    [data-theme="dark"] {
+      --bg:        #121110;
+      --bg2:       #1c1b19;
+      --surface:   #222018;
+      --border:    #2e2c28;
+      --text:      #f0ece4;
+      --muted:     #998f82;
+      --accent:    #e07840;
+      --accent2:   #5b9ee8;
+      --accent3:   #3ec99a;
+      --hero-bg:   #0a0908;
+      --hero-text: #f0ece4;
+      --card-shadow: 0 2px 16px rgba(0,0,0,.35);
+      --card-shadow-hover: 0 8px 40px rgba(0,0,0,.5);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background var(--transition), color var(--transition);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+    /* ── UTILITY ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,98,42,.35); }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      transition: background var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: -.02em;
+    }
+    .logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 42px; height: 24px;
+      background: var(--border);
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      transition: background var(--transition);
+    }
+    .theme-toggle::after {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 18px; height: 18px;
+      background: var(--text);
+      border-radius: 50%;
+      transition: transform var(--transition), background var(--transition);
+    }
+    [data-theme="dark"] .theme-toggle::after { transform: translateX(18px); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 12px 24px 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 11px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ── HERO ── */
+    #hero {
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(200,98,42,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,98,42,.18);
+      border: 1px solid rgba(200,98,42,.35);
+      color: #e09060;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero-tag::before { content: '●'; font-size: .5rem; }
+    .hero-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-h1 em { color: var(--accent); font-style: normal; }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(240,236,228,.7);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-card-stack {
+      position: relative;
+      width: 340px;
+      height: 340px;
+    }
+    .hcard {
+      position: absolute;
+      border-radius: 18px;
+      padding: 22px;
+      font-size: .85rem;
+      font-weight: 500;
+      backdrop-filter: blur(8px);
+    }
+    .hcard-main {
+      inset: 0;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hcard-main .hcard-icon { font-size: 2.4rem; margin-bottom: 12px; }
+    .hcard-main .hcard-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+    .hcard-main .hcard-desc { color: rgba(240,236,228,.55); font-size: .82rem; }
+    .hcard-stat {
+      right: -20px; bottom: 60px;
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(200,98,42,.4);
+    }
+    .hcard-stat strong { display: block; font-size: 1.4rem; font-weight: 700; }
+    .hcard-stat small { font-size: .72rem; opacity: .85; }
+    .hcard-readers {
+      left: -18px; top: 60px;
+      background: rgba(42,107,200,.85);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 12px;
+    }
+    .hcard-readers strong { font-size: 1.1rem; }
+    .hcard-readers small { font-size: .72rem; display: block; opacity: .85; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .trust-inner {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .trust-item .ti-icon { font-size: 1.2rem; }
+
+    /* ── ABOUT ── */
+    #about { padding: 96px 0; }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-img-box {
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--accent) 0%, #e07840 50%, #c8622a 100%);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--card-shadow);
+      border-radius: 16px;
+      padding: 18px 22px;
+      min-width: 160px;
+    }
+    .about-badge strong { display: block; font-size: 1.6rem; font-family: 'Playfair Display', serif; color: var(--accent); }
+    .about-badge span { font-size: .8rem; color: var(--muted); }
+    .pillars { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+    .pillar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .pillar:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(200,98,42,.12); }
+    .pillar-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+    /* ── CATEGORIES ── */
+    #categories { padding: 96px 0; background: var(--bg2); }
+    .cats-header { text-align: center; margin-bottom: 52px; }
+    .cats-header .section-sub { margin: 0 auto; }
+    .cats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .cat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 24px;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .cat-card:hover { transform: translateY(-6px); box-shadow: var(--card-shadow-hover); }
+    .cat-card:hover::before { opacity: 1; }
+    .cat-card.c1::before { background: linear-gradient(135deg, rgba(42,107,200,.07) 0%, transparent 70%); }
+    .cat-card.c2::before { background: linear-gradient(135deg, rgba(42,168,126,.07) 0%, transparent 70%); }
+    .cat-card.c3::before { background: linear-gradient(135deg, rgba(200,98,42,.07) 0%, transparent 70%); }
+    .cat-card.c4::before { background: linear-gradient(135deg, rgba(160,80,200,.07) 0%, transparent 70%); }
+    .cat-emoji { font-size: 2.6rem; margin-bottom: 16px; }
+    .cat-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .cat-desc { font-size: .85rem; color: var(--muted); line-height: 1.6; }
+    .cat-count {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: var(--bg2);
+      color: var(--muted);
+    }
+
+    /* ── BLOG POSTS ── */
+    #posts { padding: 96px 0; }
+    .posts-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .post-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .post-card:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+    .post-img {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .post-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.35));
+    }
+    .post-cat-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 50px;
+      color: #fff;
+      z-index: 1;
+    }
+    .post-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .post-meta {
+      display: flex;
+      gap: 14px;
+      font-size: .78rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .post-desc { font-size: .87rem; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+    .post-link {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+    .post-link:hover { gap: 10px; }
+
+    /* ── WEB STORIES ── */
+    #stories { padding: 96px 0; background: var(--bg2); }
+    .stories-header { margin-bottom: 40px; }
+    .stories-scroll {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .stories-scroll::-webkit-scrollbar { height: 4px; }
+    .story-card {
+      flex-shrink: 0;
+      width: 160px;
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: start;
+      cursor: pointer;
+      transition: transform var(--transition);
+    }
+    .story-card:hover { transform: scale(1.04); }
+    .story-inner {
+      aspect-ratio: 9/16;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+      position: relative;
+    }
+    .story-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,.75));
+    }
+    .story-emoji { font-size: 3rem; position: absolute; top: 24px; left: 50%; transform: translateX(-50%); z-index: 1; }
+    .story-title {
+      position: relative;
+      z-index: 1;
+      font-size: .82rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.35;
+    }
+    .story-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      border: 3px solid var(--accent);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .story-card:hover .story-ring { opacity: 1; }
+
+    /* ── NEWSLETTER ── */
+    #newsletter { padding: 96px 0; }
+    .nl-box {
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      border-radius: 28px;
+      padding: 72px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .nl-box::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(200,98,42,.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .nl-box .section-title { color: var(--hero-text); }
+    .nl-box .section-sub { color: rgba(240,236,228,.65); margin: 0 auto 36px; }
+    .nl-form {
+      display: flex;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .nl-input {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.08);
+      color: var(--hero-text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .nl-input::placeholder { color: rgba(240,236,228,.4); }
+    .nl-input:focus { border-color: var(--accent); }
+    .nl-note { margin-top: 14px; font-size: .78rem; color: rgba(240,236,228,.4); }
+
+    /* ── CONTACT ── */
+    #contact { padding: 96px 0; background: var(--bg2); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .contact-info p { font-size: .95rem; color: var(--muted); line-height: 1.75; margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .contact-detail .cd-icon { font-size: 1.2rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .field label { font-size: .82rem; font-weight: 600; color: var(--muted); }
+    .field input, .field textarea {
+      padding: 13px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: .92rem;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .field input:focus, .field textarea:focus { border-color: var(--accent); }
+    .field textarea { resize: vertical; min-height: 120px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo { color: var(--hero-text); font-size: 1.6rem; }
+    .footer-brand p { margin-top: 14px; font-size: .87rem; color: rgba(240,236,228,.5); line-height: 1.7; }
+    .footer-col h4 {
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(240,236,228,.5);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a {
+      font-size: .87rem;
+      color: rgba(240,236,228,.65);
+      transition: color var(--transition);
+    }
+    .footer-col ul a:hover { color: var(--accent); }
+    .social-row { display: flex; gap: 12px; margin-top: 20px; }
+    .social-btn {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all var(--transition);
+      cursor: pointer;
+    }
+    .social-btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: .82rem;
+      color: rgba(240,236,228,.35);
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: rgba(240,236,228,.45); transition: color var(--transition); }
+    .footer-bottom-links a:hover { color: var(--accent); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { opacity: 0; animation: fadeUp .6s ease forwards; }
+    .fade-up.d1 { animation-delay: .1s; }
+    .fade-up.d2 { animation-delay: .22s; }
+    .fade-up.d3 { animation-delay: .34s; }
+    .fade-up.d4 { animation-delay: .46s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+    .hcard-stat { animation: float 4s ease-in-out infinite; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .cats-grid { grid-template-columns: repeat(2, 1fr); }
+      .posts-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-visual { display: none; }
+      .posts-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nl-box { padding: 48px 28px; }
+      .nl-form { flex-direction: column; }
+      .nl-form .btn { width: 100%; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .cats-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#" class="logo">Wealth<span>Pulse</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#posts">Blog</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#categories">Categories</a>
+    <a href="#posts">Blog</a>
+    <a href="#stories">Stories</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag fade-up">New Articles Every Week</div>
+        <h1 class="hero-h1 fade-up d1">Turn Your <em>Downtime</em> Into Real Income — Online.</h1>
+        <p class="hero-sub fade-up d2">We break down the smartest ways Americans are making money using insurance strategies, AI tools, and fitness knowledge — no fluff, no gatekeeping.</p>
+        <div class="hero-cta fade-up d3">
+          <a href="#posts" class="btn btn-primary">Start Reading →</a>
+          <a href="#categories" class="btn btn-outline" style="color:#f0ece4;border-color:rgba(240,236,228,.3)">Browse Topics</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-up d4">
+        <div class="hero-card-stack">
+          <div class="hcard hcard-main">
+            <div>
+              <div class="hcard-icon">💡</div>
+              <div class="hcard-title">AI Side Hustles That Actually Pay</div>
+              <div class="hcard-desc">Discover 12 tools turning everyday people into online earners in 2025.</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:20px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.7rem;">JR</div>
+              <span style="font-size:.78rem;opacity:.6;">By James R. · 8 min read</span>
+            </div>
+          </div>
+          <div class="hcard hcard-stat">
+            <strong>$4,200</strong>
+            <small>avg. monthly extra income</small>
+          </div>
+          <div class="hcard hcard-readers">
+            <strong>48K+</strong>
+            <small>monthly readers</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST BAR ─── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="ti-icon">✅</span> US-focused strategies</div>
+      <div class="trust-item"><span class="ti-icon">🏆</span> Top RPM niches covered</div>
+      <div class="trust-item"><span class="ti-icon">📊</span> Data-backed insights</div>
+      <div class="trust-item"><span class="ti-icon">🔒</span> No spam, ever</div>
+      <div class="trust-item"><span class="ti-icon">⚡</span> New posts weekly</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img-box">💼</div>
+        <div class="about-badge">
+          <strong>2019</strong>
+          <span>Est. — 5 years helping Americans earn more</span>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">A Blog Built for the<br/>American Earner</h2>
+        <p class="section-sub">WealthPulse was founded with one mission: help everyday Americans unlock income streams they never knew existed. We focus on four high-value pillars that can change your financial life.</p>
+        <div class="pillars">
+          <div class="pillar"><span class="pillar-icon">🛡️</span><span><strong>Insurance</strong> — Maximize your coverage while spending less</span></div>
+          <div class="pillar"><span class="pillar-icon">💪</span><span><strong>Fitness</strong> — Turn your health passion into a revenue stream</span></div>
+          <div class="pillar"><span class="pillar-icon">🤖</span><span><strong>AI Tools</strong> — Automate work and scale online income fast</span></div>
+          <div class="pillar"><span class="pillar-icon">💰</span><span><strong>Make Money Online</strong> — Proven methods, real results</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CATEGORIES ─── -->
+<section id="categories">
+  <div class="container">
+    <div class="cats-header">
+      <span class="section-label">Explore Topics</span>
+      <h2 class="section-title">Four Niches.<br/>Endless Opportunities.</h2>
+      <p class="section-sub">Each category is packed with actionable guides, case studies, and tool breakdowns curated for a US audience.</p>
+    </div>
+    <div class="cats-grid">
+      <div class="cat-card c1">
+        <div class="cat-emoji">🛡️</div>
+        <div class="cat-name">Insurance</div>
+        <div class="cat-desc">Understand policies, save on premiums, and even earn by referring clients.</div>
+        <span class="cat-count">24 Articles</span>
+      </div>
+      <div class="cat-card c2">
+        <div class="cat-emoji">💪</div>
+        <div class="cat-name">Fitness</div>
+        <div class="cat-desc">Coaching, content creation, and selling programs — fitness pays in 2025.</div>
+        <span class="cat-count">31 Articles</span>
+      </div>
+      <div class="cat-card c3">
+        <div class="cat-emoji">🤖</div>
+        <div class="cat-name">AI Tools</div>
+        <div class="cat-desc">ChatGPT, Midjourney, Sora — we show exactly how to monetize them.</div>
+        <span class="cat-count">42 Articles</span>
+      </div>
+      <div class="cat-card c4">
+        <div class="cat-emoji">💰</div>
+        <div class="cat-name">Make Money Online</div>
+        <div class="cat-desc">Freelancing, affiliate marketing, digital products and more.</div>
+        <span class="cat-count">58 Articles</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BLOG POSTS ─── -->
+<section id="posts">
+  <div class="container">
+    <div class="posts-header">
+      <div>
+        <span class="section-label">Latest Posts</span>
+        <h2 class="section-title">Featured Articles</h2>
+      </div>
+      <a href="#" class="btn btn-outline">View All Posts →</a>
+    </div>
+    <div class="posts-grid" id="postsGrid"></div>
+  </div>
+</section>
+
+<!-- ─── WEB STORIES ─── -->
+<section id="stories">
+  <div class="container">
+    <div class="stories-header">
+      <span class="section-label">Web Stories</span>
+      <h2 class="section-title">Quick Reads, Big Ideas</h2>
+      <p class="section-sub">Scroll through bite-sized visual stories — perfect for mobile browsing.</p>
+    </div>
+    <div class="stories-scroll" id="storiesScroll"></div>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ─── -->
+<section id="newsletter">
+  <div class="container">
+    <div class="nl-box">
+      <span class="section-label">Stay in the Loop</span>
+      <h2 class="section-title">Get the Best Earning Tips<br/>Delivered Weekly</h2>
+      <p class="section-sub">Join 48,000+ Americans who read WealthPulse every week. No spam — only insights that actually move the needle.</p>
+      <form class="nl-form" onsubmit="handleNewsletter(event)">
+        <input type="email" class="nl-input" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary">Subscribe Free →</button>
+      </form>
+      <p class="nl-note">🔒 We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Get in Touch</span>
+        <h3>We'd Love to Hear From You</h3>
+        <p>Have a story idea, partnership proposal, or just want to say hi? Drop us a message and we'll get back within 24 hours.</p>
+        <div class="contact-details">
+          <div class="contact-detail"><span class="cd-icon">📧</span> hello@wealthpulse.com</div>
+          <div class="contact-detail"><span class="cd-icon">📍</span> United States — Remote Team</div>
+          <div class="contact-detail"><span class="cd-icon">⏰</span> Mon–Fri, 9am–5pm EST</div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" placeholder="Alex" required />
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Johnson" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>Email Address</label>
+          <input type="email" placeholder="alex@email.com" required />
+        </div>
+        <div class="field">
+          <label>Message</label>
+          <textarea placeholder="Tell us what's on your mind…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Wealth<span>Pulse</span></a>
+        <p>Helping Americans earn smarter through insurance knowledge, fitness hustle, AI tools, and proven online income methods.</p>
+        <div class="social-row">
+          <div class="social-btn" title="Twitter">𝕏</div>
+          <div class="social-btn" title="Facebook">f</div>
+          <div class="social-btn" title="Instagram">◈</div>
+          <div class="social-btn" title="YouTube">▶</div>
+          <div class="social-btn" title="Pinterest">P</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Fitness</a></li>
+          <li><a href="#">AI Tools</a></li>
+          <li><a href="#">Make Money Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#posts">Blog</a></li>
+          <li><a href="#stories">Web Stories</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Write for Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 WealthPulse. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ── DATA ── */
+  const posts = [
+    { emoji:'🛡️', bg:'linear-gradient(135deg,#1a3a6e,#2a6bc8)', cat:'Insurance', catColor:'#2a6bc8', title:'How to Save $1,200/Year on Car Insurance Without Losing Coverage', desc:'A simple 3-step audit most Americans skip that could slash your premiums fast.', date:'Mar 10, 2025', read:'6 min' },
+    { emoji:'🤖', bg:'linear-gradient(135deg,#5a2a00,#c8622a)', cat:'AI Tools', catColor:'#c8622a', title:'7 AI Tools Paying Regular People $500–$3,000/Month in 2025', desc:'From prompt engineering to AI content businesses — here\'s what\'s actually working.', date:'Mar 7, 2025', read:'9 min' },
+    { emoji:'💪', bg:'linear-gradient(135deg,#0a3d2a,#2aa87e)', cat:'Fitness', catColor:'#2aa87e', title:'Turn Your Fitness Routine Into a $2K/Month Online Coaching Business', desc:'Step-by-step guide to packaging your knowledge and finding paying clients online.', date:'Mar 4, 2025', read:'11 min' },
+    { emoji:'💰', bg:'linear-gradient(135deg,#1a1814,#4a3a28)', cat:'Make Money', catColor:'#e07840', title:'The $0 to $5,000/Month Affiliate Marketing Roadmap for Beginners', desc:'No budget needed. This blueprint works with free traffic and the right niche.', date:'Mar 1, 2025', read:'14 min' },
+    { emoji:'🧠', bg:'linear-gradient(135deg,#2a1a6e,#7a4ac8)', cat:'AI Tools', catColor:'#c8622a', title:'ChatGPT Prompts That Generate Real Income: A Curated Collection', desc:'Copy-paste these prompts into your daily workflow and watch your productivity multiply.', date:'Feb 26, 2025', read:'7 min' },
+    { emoji:'🏥', bg:'linear-gradient(135deg,#1a3a6e,#2a6bc8)', cat:'Insurance', catColor:'#2a6bc8', title:'Health Insurance Gaps Most Americans Have (And How to Fix Them)', desc:'A licensed broker breaks down the 5 coverage holes that cost people thousands in claims.', date:'Feb 22, 2025', read:'8 min' },
+  ];
+
+  const stories = [
+    { emoji:'🤖', bg:'linear-gradient(135deg,#c8622a,#e09060)', title:'5 AI Tools You Can Try Free Today' },
+    { emoji:'💰', bg:'linear-gradient(135deg,#2a6bc8,#60a0e8)', title:'$0 to $1K in 30 Days Challenge' },
+    { emoji:'🛡️', bg:'linear-gradient(135deg,#2aa87e,#60d8ae)', title:'Life Insurance Myths Busted' },
+    { emoji:'💪', bg:'linear-gradient(135deg,#9a2a9a,#c870c8)', title:'Sell Your First Fitness Plan Online' },
+    { emoji:'📱', bg:'linear-gradient(135deg,#1a1814,#4a3a28)', title:'Best Side Hustle Apps of 2025' },
+    { emoji:'🏆', bg:'linear-gradient(135deg,#6e4a1a,#c8922a)', title:'How One Mom Made $4K With AI Art' },
+    { emoji:'📊', bg:'linear-gradient(135deg,#1a3a6e,#2a6bc8)', title:'Passive Income: Reality vs Hype' },
+    { emoji:'🌟', bg:'linear-gradient(135deg,#2a6e3a,#2ac84a)', title:'Real Stories: $3K/Month Freelancers' },
+  ];
+
+  /* ── RENDER POSTS ── */
+  const grid = document.getElementById('postsGrid');
+  posts.forEach(p => {
+    grid.innerHTML += `
+    <article class="post-card">
+      <div class="post-img" style="background:${p.bg}">
+        <span class="post-cat-badge" style="background:${p.catColor}">${p.cat}</span>
+        <span style="position:relative;z-index:1;font-size:3rem;">${p.emoji}</span>
+      </div>
+      <div class="post-body">
+        <div class="post-meta"><span>📅 ${p.date}</span><span>⏱ ${p.read}</span></div>
+        <h3 class="post-title">${p.title}</h3>
+        <p class="post-desc">${p.desc}</p>
+        <a href="#" class="post-link">Read More <span>→</span></a>
+      </div>
+    </article>`;
+  });
+
+  /* ── RENDER STORIES ── */
+  const sc = document.getElementById('storiesScroll');
+  stories.forEach(s => {
+    sc.innerHTML += `
+    <div class="story-card">
+      <div class="story-inner" style="background:${s.bg}">
+        <span class="story-emoji">${s.emoji}</span>
+        <div class="story-title">${s.title}</div>
+      </div>
+      <div class="story-ring"></div>
+    </div>`;
+  });
+
+  /* ── THEME TOGGLE ── */
+  const root = document.documentElement;
+  const saved = localStorage.getItem('theme') || 'light';
+  root.setAttribute('data-theme', saved);
+
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+
+  /* ── HAMBURGER ── */
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+
+  /* ── CLOSE MENU ON LINK CLICK ── */
+  document.querySelectorAll('.mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+  });
+
+  /* ── FORMS ── */
+  function handleNewsletter(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✅ You\'re subscribed!';
+    btn.style.background = '#2aa87e';
+    e.target.querySelector('input').value = '';
+    setTimeout(() => { btn.textContent = 'Subscribe Free →'; btn.style.background = ''; }, 3000);
+  }
+  function handleContact(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✅ Message sent!';
+    btn.style.background = '#2aa87e';
+    setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; }, 3000);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.cat-card, .post-card, .story-card, .pillar').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
